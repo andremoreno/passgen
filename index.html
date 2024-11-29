@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom style for the password output div */
+        #passwordOutput {
+            min-height: 80px; /* Increase the height */
+            font-size: 1.25rem; /* Larger font size for visibility */
+            line-height: 1.5; /* Better line spacing */
+            word-break: break-word; /* Prevent text overflow */
+            display: flex; /* Center the text */
+            align-items: center; /* Vertically align text */
+            justify-content: center; /* Horizontally align text */
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h1 class="h4 mb-0">Password Generator</h1>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="uppercase" checked>
+                                <label class="form-check-label" for="uppercase">Uppercase Letters</label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="lowercase" checked>
+                                <label class="form-check-label" for="lowercase">Lowercase Letters</label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="numbers" checked>
+                                <label class="form-check-label" for="numbers">Numbers</label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="checkbox" id="symbols" checked>
+                                <label class="form-check-label" for="symbols">Symbols</label>
+                            </div>
+                            <div class="mb-3">
+                                <label for="length" class="form-label">Password Length</label>
+                                <input type="number" id="length" class="form-control" min="4" max="64" value="15">
+                            </div>
+                        </form>
+                        <button class="btn btn-primary w-100 mb-3" onclick="generatePassword()">Generate Password</button>
+                        <div class="alert alert-secondary text-center mb-3" id="passwordOutput" role="alert">
+                            Your password will appear here
+                        </div>
+                        <button class="btn btn-outline-primary w-100" onclick="copyPassword()">Copy Password</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
